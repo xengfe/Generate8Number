@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yskj.dao.CrmClientMapper" >
+  <resultMap id="BaseResultMap" type="com.yskj.pojo.CrmClient" >
+    <result column="C_ID" property="cId" jdbcType="CHAR" />
+    <result column="C_Name" property="cName" jdbcType="VARCHAR" />
+    <result column="C_Sex" property="cSex" jdbcType="INTEGER" />
+    <result column="C_Birthday" property="cBirthday" jdbcType="TIMESTAMP" />
+    <result column="C_Media" property="cMedia" jdbcType="CHAR" />
+    <result column="C_MediaMemberType" property="cMediamembertype" jdbcType="INTEGER" />
+    <result column="C_MediaMemberProduct" property="cMediamemberproduct" jdbcType="VARCHAR" />
+    <result column="C_MediaMemberValidity" property="cMediamembervalidity" jdbcType="INTEGER" />
+    <result column="C_Validity" property="cValidity" jdbcType="INTEGER" />
+    <result column="C_Activity" property="cActivity" jdbcType="INTEGER" />
+    <result column="C_AgeGroup" property="cAgegroup" jdbcType="INTEGER" />
+    <result column="C_Addressee" property="cAddressee" jdbcType="VARCHAR" />
+    <result column="C_Province" property="cProvince" jdbcType="CHAR" />
+    <result column="C_Address" property="cAddress" jdbcType="VARCHAR" />
+    <result column="C_ZIPCode" property="cZipcode" jdbcType="VARCHAR" />
+    <result column="C_SendTel1" property="cSendtel1" jdbcType="VARCHAR" />
+    <result column="C_SendTel2" property="cSendtel2" jdbcType="VARCHAR" />
+    <result column="C_Level" property="cLevel" jdbcType="INTEGER" />
+    <result column="C_Classes" property="cClasses" jdbcType="INTEGER" />
+    <result column="C_InnerClasses" property="cInnerclasses" jdbcType="INTEGER" />
+    <result column="C_MemberType" property="cMembertype" jdbcType="INTEGER" />
+    <result column="C_FirstDay" property="cFirstday" jdbcType="TIMESTAMP" />
+    <result column="C_JoinDay" property="cJoinday" jdbcType="TIMESTAMP" />
+    <result column="C_Money" property="cMoney" jdbcType="DECIMAL" />
+    <result column="C_Volume" property="cVolume" jdbcType="DECIMAL" />
+    <result column="C_Point" property="cPoint" jdbcType="DECIMAL" />
+    <result column="C_RedPocket" property="cRedpocket" jdbcType="DECIMAL" />
+    <result column="C_CardNum" property="cCardnum" jdbcType="DECIMAL" />
+    <result column="C_ReceivableMoney" property="cReceivablemoney" jdbcType="DECIMAL" />
+    <result column="C_FactMoney" property="cFactmoney" jdbcType="DECIMAL" />
+    <result column="C_TotalMoney" property="cTotalmoney" jdbcType="DECIMAL" />
+    <result column="C_Deputy" property="cDeputy" jdbcType="CHAR" />
+    <result column="C_Dept" property="cDept" jdbcType="CHAR" />
+    <result column="C_MemberPoint" property="cMemberpoint" jdbcType="INTEGER" />
+    <result column="C_Metier" property="cMetier" jdbcType="INTEGER" />
+    <result column="C_Household" property="cHousehold" jdbcType="INTEGER" />
+    <result column="C_Trade" property="cTrade" jdbcType="INTEGER" />
+    <result column="C_Education" property="cEducation" jdbcType="INTEGER" />
+    <result column="C_CardType" property="cCardtype" jdbcType="INTEGER" />
+    <result column="C_Number" property="cNumber" jdbcType="VARCHAR" />
+    <result column="C_SuperNumber" property="cSupernumber" jdbcType="VARCHAR" />
+    <result column="C_VIPNumber" property="cVipnumber" jdbcType="VARCHAR" />
+    <result column="C_ECID" property="cEcid" jdbcType="VARCHAR" />
+    <result column="C_EUser" property="cEuser" jdbcType="VARCHAR" />
+    <result column="C_CommendID" property="cCommendid" jdbcType="CHAR" />
+    <result column="C_Found" property="cFound" jdbcType="CHAR" />
+    <result column="C_FoundDept" property="cFounddept" jdbcType="CHAR" />
+    <result column="C_FoundDate" property="cFounddate" jdbcType="TIMESTAMP" />
+    <result column="C_LastOperator" property="cLastoperator" jdbcType="CHAR" />
+    <result column="C_LastOperateTime" property="cLastoperatetime" jdbcType="TIMESTAMP" />
+    <result column="C_Else" property="cElse" jdbcType="VARCHAR" />
+    <result column="C_Remark" property="cRemark" jdbcType="VARCHAR" />
+    <result column="C_LastBillTime" property="cLastbilltime" jdbcType="TIMESTAMP" />
+    <result column="C_LastCallTime" property="cLastcalltime" jdbcType="TIMESTAMP" />
+    <result column="C_Tel1Type" property="cTel1type" jdbcType="INTEGER" />
+    <result column="C_Tel1Belong" property="cTel1belong" jdbcType="INTEGER" />
+    <result column="C_Tel1Code" property="cTel1code" jdbcType="VARCHAR" />
+    <result column="C_Tel1Number" property="cTel1number" jdbcType="VARCHAR" />
+    <result column="C_Tel1Extension" property="cTel1extension" jdbcType="VARCHAR" />
+    <result column="C_Tel2Type" property="cTel2type" jdbcType="INTEGER" />
+    <result column="C_Tel2Belong" property="cTel2belong" jdbcType="INTEGER" />
+    <result column="C_Tel2Code" property="cTel2code" jdbcType="VARCHAR" />
+    <result column="C_Tel2Number" property="cTel2number" jdbcType="VARCHAR" />
+    <result column="C_Tel2Extension" property="cTel2extension" jdbcType="VARCHAR" />
+    <result column="C_CrmID" property="cCrmid" jdbcType="BIGINT" />
+    <result column="C_Creator" property="cCreator" jdbcType="CHAR" />
+    <result column="C_CreateTime" property="cCreatetime" jdbcType="TIMESTAMP" />
+    <result column="C_Modifier" property="cModifier" jdbcType="CHAR" />
+    <result column="C_ModifyTime" property="cModifytime" jdbcType="TIMESTAMP" />
+    <result column="C_CompanyID" property="cCompanyid" jdbcType="CHAR" />
+    <result column="C_IsDelete" property="cIsdelete" jdbcType="INTEGER" />
+    <result column="C_BaseTotalMoney" property="cBasetotalmoney" jdbcType="DECIMAL" />
+    <result column="C_Publication" property="cPublication" jdbcType="INTEGER" />
+    <result column="C_VirtualAfterLevel" property="cVirtualafterlevel" jdbcType="INTEGER" />
+    <result column="C_LastContactTime" property="cLastcontacttime" jdbcType="TIMESTAMP" />
+    <result column="C_LastInterCourseTime" property="cLastintercoursetime" jdbcType="TIMESTAMP" />
+    <result column="C_IDNumber" property="cIdnumber" jdbcType="VARCHAR" />
+    <result column="C_MediaClass" property="cMediaclass" jdbcType="INTEGER" />
+    <result column="C_AllowSMS" property="cAllowsms" jdbcType="INTEGER" />
+  </resultMap>
+  <insert id="insert" parameterType="com.yskj.pojo.CrmClient" >
+    insert into crm_client (C_ID, C_Name, C_Sex, 
+      C_Birthday, C_Media, C_MediaMemberType, 
+      C_MediaMemberProduct, C_MediaMemberValidity, 
+      C_Validity, C_Activity, C_AgeGroup, 
+      C_Addressee, C_Province, C_Address, 
+      C_ZIPCode, C_SendTel1, C_SendTel2, 
+      C_Level, C_Classes, C_InnerClasses, 
+      C_MemberType, C_FirstDay, C_JoinDay, 
+      C_Money, C_Volume, C_Point, 
+      C_RedPocket, C_CardNum, C_ReceivableMoney, 
+      C_FactMoney, C_TotalMoney, C_Deputy, 
+      C_Dept, C_MemberPoint, C_Metier, 
+      C_Household, C_Trade, C_Education, 
+      C_CardType, C_Number, C_SuperNumber, 
+      C_VIPNumber, C_ECID, C_EUser, 
+      C_CommendID, C_Found, C_FoundDept, 
+      C_FoundDate, C_LastOperator, C_LastOperateTime, 
+      C_Else, C_Remark, C_LastBillTime, 
+      C_LastCallTime, C_Tel1Type, C_Tel1Belong, 
+      C_Tel1Code, C_Tel1Number, C_Tel1Extension, 
+      C_Tel2Type, C_Tel2Belong, C_Tel2Code, 
+      C_Tel2Number, C_Tel2Extension, C_CrmID, 
+      C_Creator, C_CreateTime, C_Modifier, 
+      C_ModifyTime, C_CompanyID, C_IsDelete, 
+      C_BaseTotalMoney, C_Publication, C_VirtualAfterLevel, 
+      C_LastContactTime, C_LastInterCourseTime, 
+      C_IDNumber, C_MediaClass, C_AllowSMS
+      )
+    values (#{cId,jdbcType=CHAR}, #{cName,jdbcType=VARCHAR}, #{cSex,jdbcType=INTEGER}, 
+      #{cBirthday,jdbcType=TIMESTAMP}, #{cMedia,jdbcType=CHAR}, #{cMediamembertype,jdbcType=INTEGER}, 
+      #{cMediamemberproduct,jdbcType=VARCHAR}, #{cMediamembervalidity,jdbcType=INTEGER}, 
+      #{cValidity,jdbcType=INTEGER}, #{cActivity,jdbcType=INTEGER}, #{cAgegroup,jdbcType=INTEGER}, 
+      #{cAddressee,jdbcType=VARCHAR}, #{cProvince,jdbcType=CHAR}, #{cAddress,jdbcType=VARCHAR}, 
+      #{cZipcode,jdbcType=VARCHAR}, #{cSendtel1,jdbcType=VARCHAR}, #{cSendtel2,jdbcType=VARCHAR}, 
+      #{cLevel,jdbcType=INTEGER}, #{cClasses,jdbcType=INTEGER}, #{cInnerclasses,jdbcType=INTEGER}, 
+      #{cMembertype,jdbcType=INTEGER}, #{cFirstday,jdbcType=TIMESTAMP}, #{cJoinday,jdbcType=TIMESTAMP}, 
+      #{cMoney,jdbcType=DECIMAL}, #{cVolume,jdbcType=DECIMAL}, #{cPoint,jdbcType=DECIMAL}, 
+      #{cRedpocket,jdbcType=DECIMAL}, #{cCardnum,jdbcType=DECIMAL}, #{cReceivablemoney,jdbcType=DECIMAL}, 
+      #{cFactmoney,jdbcType=DECIMAL}, #{cTotalmoney,jdbcType=DECIMAL}, #{cDeputy,jdbcType=CHAR}, 
+      #{cDept,jdbcType=CHAR}, #{cMemberpoint,jdbcType=INTEGER}, #{cMetier,jdbcType=INTEGER}, 
+      #{cHousehold,jdbcType=INTEGER}, #{cTrade,jdbcType=INTEGER}, #{cEducation,jdbcType=INTEGER}, 
+      #{cCardtype,jdbcType=INTEGER}, #{cNumber,jdbcType=VARCHAR}, #{cSupernumber,jdbcType=VARCHAR}, 
+      #{cVipnumber,jdbcType=VARCHAR}, #{cEcid,jdbcType=VARCHAR}, #{cEuser,jdbcType=VARCHAR}, 
+      #{cCommendid,jdbcType=CHAR}, #{cFound,jdbcType=CHAR}, #{cFounddept,jdbcType=CHAR}, 
+      #{cFounddate,jdbcType=TIMESTAMP}, #{cLastoperator,jdbcType=CHAR}, #{cLastoperatetime,jdbcType=TIMESTAMP}, 
+      #{cElse,jdbcType=VARCHAR}, #{cRemark,jdbcType=VARCHAR}, #{cLastbilltime,jdbcType=TIMESTAMP}, 
+      #{cLastcalltime,jdbcType=TIMESTAMP}, #{cTel1type,jdbcType=INTEGER}, #{cTel1belong,jdbcType=INTEGER}, 
+      #{cTel1code,jdbcType=VARCHAR}, #{cTel1number,jdbcType=VARCHAR}, #{cTel1extension,jdbcType=VARCHAR}, 
+      #{cTel2type,jdbcType=INTEGER}, #{cTel2belong,jdbcType=INTEGER}, #{cTel2code,jdbcType=VARCHAR}, 
+      #{cTel2number,jdbcType=VARCHAR}, #{cTel2extension,jdbcType=VARCHAR}, #{cCrmid,jdbcType=BIGINT}, 
+      #{cCreator,jdbcType=CHAR}, #{cCreatetime,jdbcType=TIMESTAMP}, #{cModifier,jdbcType=CHAR}, 
+      #{cModifytime,jdbcType=TIMESTAMP}, #{cCompanyid,jdbcType=CHAR}, #{cIsdelete,jdbcType=INTEGER}, 
+      #{cBasetotalmoney,jdbcType=DECIMAL}, #{cPublication,jdbcType=INTEGER}, #{cVirtualafterlevel,jdbcType=INTEGER}, 
+      #{cLastcontacttime,jdbcType=TIMESTAMP}, #{cLastintercoursetime,jdbcType=TIMESTAMP}, 
+      #{cIdnumber,jdbcType=VARCHAR}, #{cMediaclass,jdbcType=INTEGER}, #{cAllowsms,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.yskj.pojo.CrmClient" >
+    insert into crm_client
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cId != null" >
+        C_ID,
+      </if>
+      <if test="cName != null" >
+        C_Name,
+      </if>
+      <if test="cSex != null" >
+        C_Sex,
+      </if>
+      <if test="cBirthday != null" >
+        C_Birthday,
+      </if>
+      <if test="cMedia != null" >
+        C_Media,
+      </if>
+      <if test="cMediamembertype != null" >
+        C_MediaMemberType,
+      </if>
+      <if test="cMediamemberproduct != null" >
+        C_MediaMemberProduct,
+      </if>
+      <if test="cMediamembervalidity != null" >
+        C_MediaMemberValidity,
+      </if>
+      <if test="cValidity != null" >
+        C_Validity,
+      </if>
+      <if test="cActivity != null" >
+        C_Activity,
+      </if>
+      <if test="cAgegroup != null" >
+        C_AgeGroup,
+      </if>
+      <if test="cAddressee != null" >
+        C_Addressee,
+      </if>
+      <if test="cProvince != null" >
+        C_Province,
+      </if>
+      <if test="cAddress != null" >
+        C_Address,
+      </if>
+      <if test="cZipcode != null" >
+        C_ZIPCode,
+      </if>
+      <if test="cSendtel1 != null" >
+        C_SendTel1,
+      </if>
+      <if test="cSendtel2 != null" >
+        C_SendTel2,
+      </if>
+      <if test="cLevel != null" >
+        C_Level,
+      </if>
+      <if test="cClasses != null" >
+        C_Classes,
+      </if>
+      <if test="cInnerclasses != null" >
+        C_InnerClasses,
+      </if>
+      <if test="cMembertype != null" >
+        C_MemberType,
+      </if>
+      <if test="cFirstday != null" >
+        C_FirstDay,
+      </if>
+      <if test="cJoinday != null" >
+        C_JoinDay,
+      </if>
+      <if test="cMoney != null" >
+        C_Money,
+      </if>
+      <if test="cVolume != null" >
+        C_Volume,
+      </if>
+      <if test="cPoint != null" >
+        C_Point,
+      </if>
+      <if test="cRedpocket != null" >
+        C_RedPocket,
+      </if>
+      <if test="cCardnum != null" >
+        C_CardNum,
+      </if>
+      <if test="cReceivablemoney != null" >
+        C_ReceivableMoney,
+      </if>
+      <if test="cFactmoney != null" >
+        C_FactMoney,
+      </if>
+      <if test="cTotalmoney != null" >
+        C_TotalMoney,
+      </if>
+      <if test="cDeputy != null" >
+        C_Deputy,
+      </if>
+      <if test="cDept != null" >
+        C_Dept,
+      </if>
+      <if test="cMemberpoint != null" >
+        C_MemberPoint,
+      </if>
+      <if test="cMetier != null" >
+        C_Metier,
+      </if>
+      <if test="cHousehold != null" >
+        C_Household,
+      </if>
+      <if test="cTrade != null" >
+        C_Trade,
+      </if>
+      <if test="cEducation != null" >
+        C_Education,
+      </if>
+      <if test="cCardtype != null" >
+        C_CardType,
+      </if>
+      <if test="cNumber != null" >
+        C_Number,
+      </if>
+      <if test="cSupernumber != null" >
+        C_SuperNumber,
+      </if>
+      <if test="cVipnumber != null" >
+        C_VIPNumber,
+      </if>
+      <if test="cEcid != null" >
+        C_ECID,
+      </if>
+      <if test="cEuser != null" >
+        C_EUser,
+      </if>
+      <if test="cCommendid != null" >
+        C_CommendID,
+      </if>
+      <if test="cFound != null" >
+        C_Found,
+      </if>
+      <if test="cFounddept != null" >
+        C_FoundDept,
+      </if>
+      <if test="cFounddate != null" >
+        C_FoundDate,
+      </if>
+      <if test="cLastoperator != null" >
+        C_LastOperator,
+      </if>
+      <if test="cLastoperatetime != null" >
+        C_LastOperateTime,
+      </if>
+      <if test="cElse != null" >
+        C_Else,
+      </if>
+      <if test="cRemark != null" >
+        C_Remark,
+      </if>
+      <if test="cLastbilltime != null" >
+        C_LastBillTime,
+      </if>
+      <if test="cLastcalltime != null" >
+        C_LastCallTime,
+      </if>
+      <if test="cTel1type != null" >
+        C_Tel1Type,
+      </if>
+      <if test="cTel1belong != null" >
+        C_Tel1Belong,
+      </if>
+      <if test="cTel1code != null" >
+        C_Tel1Code,
+      </if>
+      <if test="cTel1number != null" >
+        C_Tel1Number,
+      </if>
+      <if test="cTel1extension != null" >
+        C_Tel1Extension,
+      </if>
+      <if test="cTel2type != null" >
+        C_Tel2Type,
+      </if>
+      <if test="cTel2belong != null" >
+        C_Tel2Belong,
+      </if>
+      <if test="cTel2code != null" >
+        C_Tel2Code,
+      </if>
+      <if test="cTel2number != null" >
+        C_Tel2Number,
+      </if>
+      <if test="cTel2extension != null" >
+        C_Tel2Extension,
+      </if>
+      <if test="cCrmid != null" >
+        C_CrmID,
+      </if>
+      <if test="cCreator != null" >
+        C_Creator,
+      </if>
+      <if test="cCreatetime != null" >
+        C_CreateTime,
+      </if>
+      <if test="cModifier != null" >
+        C_Modifier,
+      </if>
+      <if test="cModifytime != null" >
+        C_ModifyTime,
+      </if>
+      <if test="cCompanyid != null" >
+        C_CompanyID,
+      </if>
+      <if test="cIsdelete != null" >
+        C_IsDelete,
+      </if>
+      <if test="cBasetotalmoney != null" >
+        C_BaseTotalMoney,
+      </if>
+      <if test="cPublication != null" >
+        C_Publication,
+      </if>
+      <if test="cVirtualafterlevel != null" >
+        C_VirtualAfterLevel,
+      </if>
+      <if test="cLastcontacttime != null" >
+        C_LastContactTime,
+      </if>
+      <if test="cLastintercoursetime != null" >
+        C_LastInterCourseTime,
+      </if>
+      <if test="cIdnumber != null" >
+        C_IDNumber,
+      </if>
+      <if test="cMediaclass != null" >
+        C_MediaClass,
+      </if>
+      <if test="cAllowsms != null" >
+        C_AllowSMS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cId != null" >
+        #{cId,jdbcType=CHAR},
+      </if>
+      <if test="cName != null" >
+        #{cName,jdbcType=VARCHAR},
+      </if>
+      <if test="cSex != null" >
+        #{cSex,jdbcType=INTEGER},
+      </if>
+      <if test="cBirthday != null" >
+        #{cBirthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cMedia != null" >
+        #{cMedia,jdbcType=CHAR},
+      </if>
+      <if test="cMediamembertype != null" >
+        #{cMediamembertype,jdbcType=INTEGER},
+      </if>
+      <if test="cMediamemberproduct != null" >
+        #{cMediamemberproduct,jdbcType=VARCHAR},
+      </if>
+      <if test="cMediamembervalidity != null" >
+        #{cMediamembervalidity,jdbcType=INTEGER},
+      </if>
+      <if test="cValidity != null" >
+        #{cValidity,jdbcType=INTEGER},
+      </if>
+      <if test="cActivity != null" >
+        #{cActivity,jdbcType=INTEGER},
+      </if>
+      <if test="cAgegroup != null" >
+        #{cAgegroup,jdbcType=INTEGER},
+      </if>
+      <if test="cAddressee != null" >
+        #{cAddressee,jdbcType=VARCHAR},
+      </if>
+      <if test="cProvince != null" >
+        #{cProvince,jdbcType=CHAR},
+      </if>
+      <if test="cAddress != null" >
+        #{cAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="cZipcode != null" >
+        #{cZipcode,jdbcType=VARCHAR},
+      </if>
+      <if test="cSendtel1 != null" >
+        #{cSendtel1,jdbcType=VARCHAR},
+      </if>
+      <if test="cSendtel2 != null" >
+        #{cSendtel2,jdbcType=VARCHAR},
+      </if>
+      <if test="cLevel != null" >
+        #{cLevel,jdbcType=INTEGER},
+      </if>
+      <if test="cClasses != null" >
+        #{cClasses,jdbcType=INTEGER},
+      </if>
+      <if test="cInnerclasses != null" >
+        #{cInnerclasses,jdbcType=INTEGER},
+      </if>
+      <if test="cMembertype != null" >
+        #{cMembertype,jdbcType=INTEGER},
+      </if>
+      <if test="cFirstday != null" >
+        #{cFirstday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cJoinday != null" >
+        #{cJoinday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cMoney != null" >
+        #{cMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="cVolume != null" >
+        #{cVolume,jdbcType=DECIMAL},
+      </if>
+      <if test="cPoint != null" >
+        #{cPoint,jdbcType=DECIMAL},
+      </if>
+      <if test="cRedpocket != null" >
+        #{cRedpocket,jdbcType=DECIMAL},
+      </if>
+      <if test="cCardnum != null" >
+        #{cCardnum,jdbcType=DECIMAL},
+      </if>
+      <if test="cReceivablemoney != null" >
+        #{cReceivablemoney,jdbcType=DECIMAL},
+      </if>
+      <if test="cFactmoney != null" >
+        #{cFactmoney,jdbcType=DECIMAL},
+      </if>
+      <if test="cTotalmoney != null" >
+        #{cTotalmoney,jdbcType=DECIMAL},
+      </if>
+      <if test="cDeputy != null" >
+        #{cDeputy,jdbcType=CHAR},
+      </if>
+      <if test="cDept != null" >
+        #{cDept,jdbcType=CHAR},
+      </if>
+      <if test="cMemberpoint != null" >
+        #{cMemberpoint,jdbcType=INTEGER},
+      </if>
+      <if test="cMetier != null" >
+        #{cMetier,jdbcType=INTEGER},
+      </if>
+      <if test="cHousehold != null" >
+        #{cHousehold,jdbcType=INTEGER},
+      </if>
+      <if test="cTrade != null" >
+        #{cTrade,jdbcType=INTEGER},
+      </if>
+      <if test="cEducation != null" >
+        #{cEducation,jdbcType=INTEGER},
+      </if>
+      <if test="cCardtype != null" >
+        #{cCardtype,jdbcType=INTEGER},
+      </if>
+      <if test="cNumber != null" >
+        #{cNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="cSupernumber != null" >
+        #{cSupernumber,jdbcType=VARCHAR},
+      </if>
+      <if test="cVipnumber != null" >
+        #{cVipnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="cEcid != null" >
+        #{cEcid,jdbcType=VARCHAR},
+      </if>
+      <if test="cEuser != null" >
+        #{cEuser,jdbcType=VARCHAR},
+      </if>
+      <if test="cCommendid != null" >
+        #{cCommendid,jdbcType=CHAR},
+      </if>
+      <if test="cFound != null" >
+        #{cFound,jdbcType=CHAR},
+      </if>
+      <if test="cFounddept != null" >
+        #{cFounddept,jdbcType=CHAR},
+      </if>
+      <if test="cFounddate != null" >
+        #{cFounddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cLastoperator != null" >
+        #{cLastoperator,jdbcType=CHAR},
+      </if>
+      <if test="cLastoperatetime != null" >
+        #{cLastoperatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cElse != null" >
+        #{cElse,jdbcType=VARCHAR},
+      </if>
+      <if test="cRemark != null" >
+        #{cRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="cLastbilltime != null" >
+        #{cLastbilltime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cLastcalltime != null" >
+        #{cLastcalltime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cTel1type != null" >
+        #{cTel1type,jdbcType=INTEGER},
+      </if>
+      <if test="cTel1belong != null" >
+        #{cTel1belong,jdbcType=INTEGER},
+      </if>
+      <if test="cTel1code != null" >
+        #{cTel1code,jdbcType=VARCHAR},
+      </if>
+      <if test="cTel1number != null" >
+        #{cTel1number,jdbcType=VARCHAR},
+      </if>
+      <if test="cTel1extension != null" >
+        #{cTel1extension,jdbcType=VARCHAR},
+      </if>
+      <if test="cTel2type != null" >
+        #{cTel2type,jdbcType=INTEGER},
+      </if>
+      <if test="cTel2belong != null" >
+        #{cTel2belong,jdbcType=INTEGER},
+      </if>
+      <if test="cTel2code != null" >
+        #{cTel2code,jdbcType=VARCHAR},
+      </if>
+      <if test="cTel2number != null" >
+        #{cTel2number,jdbcType=VARCHAR},
+      </if>
+      <if test="cTel2extension != null" >
+        #{cTel2extension,jdbcType=VARCHAR},
+      </if>
+      <if test="cCrmid != null" >
+        #{cCrmid,jdbcType=BIGINT},
+      </if>
+      <if test="cCreator != null" >
+        #{cCreator,jdbcType=CHAR},
+      </if>
+      <if test="cCreatetime != null" >
+        #{cCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cModifier != null" >
+        #{cModifier,jdbcType=CHAR},
+      </if>
+      <if test="cModifytime != null" >
+        #{cModifytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cCompanyid != null" >
+        #{cCompanyid,jdbcType=CHAR},
+      </if>
+      <if test="cIsdelete != null" >
+        #{cIsdelete,jdbcType=INTEGER},
+      </if>
+      <if test="cBasetotalmoney != null" >
+        #{cBasetotalmoney,jdbcType=DECIMAL},
+      </if>
+      <if test="cPublication != null" >
+        #{cPublication,jdbcType=INTEGER},
+      </if>
+      <if test="cVirtualafterlevel != null" >
+        #{cVirtualafterlevel,jdbcType=INTEGER},
+      </if>
+      <if test="cLastcontacttime != null" >
+        #{cLastcontacttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cLastintercoursetime != null" >
+        #{cLastintercoursetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cIdnumber != null" >
+        #{cIdnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="cMediaclass != null" >
+        #{cMediaclass,jdbcType=INTEGER},
+      </if>
+      <if test="cAllowsms != null" >
+        #{cAllowsms,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>
