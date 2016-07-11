@@ -16,7 +16,7 @@ public class Generator8NumberServiceImp<T> implements IGenerator8NumberService<T
 	private CrmDeviceCodeMapper<T> CrmDeviceCodeDao;
 	
 	@Override
-	public int deleteByPrimaryKey(Integer cId) {
+	public int deleteByPrimaryKey(String cId) {
 		return CrmDeviceCodeDao.deleteByPrimaryKey(cId);
 	}
 
@@ -36,7 +36,7 @@ public class Generator8NumberServiceImp<T> implements IGenerator8NumberService<T
 	}
 
 	@Override
-	public T selectByPrimaryKey(Integer cId) {
+	public T selectByPrimaryKey(String cId) {
 		return CrmDeviceCodeDao.selectByPrimaryKey(cId);
 	}
 

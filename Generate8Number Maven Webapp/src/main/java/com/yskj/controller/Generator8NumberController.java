@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+import java.util.UUID;
 
 import javax.annotation.Resource;
 
@@ -11,16 +12,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 import com.yskj.pojo.CrmDeviceCode;
 import com.yskj.service.IGenerator8NumberService;
 import com.yskj.util.Log;
+
 
 @Controller
 @RequestMapping("/generator")
 public class Generator8NumberController {
 	
-	public static final int min = 10000000;
-	public static final int max = 99999999;
+	public static final int min = 80000000;
+	public static final int max = 89999999;
 	
 	
 	@Resource
@@ -31,11 +34,12 @@ public class Generator8NumberController {
 	public  Map<String, Object> Start(String begin,String  end){
 		Map<String, Object> map = new HashMap<String, Object>();
 		Random random = new Random();
-		for (int i = 0; i < max - min + 1 ; i++) {
+		for (int i = 0; i < 500000 ; i++) {
 			String result =  create(min,max,random);
 			Log.i("第"+ i + "个" + ",number " + result);
 			if (result != null) {
 				CrmDeviceCode  code = new CrmDeviceCode();
+				code.setcId(UUID.randomUUID().toString());
 				code.setcNumber(result);
 				code.setcState(0);
 				code.setcCreatetime(new Date());

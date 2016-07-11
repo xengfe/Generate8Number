@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface IGenerator8NumberService<T> {
 	
-    public int deleteByPrimaryKey(Integer cId);
+    public int deleteByPrimaryKey(String cId);
 
     public int insert(T record);
 
@@ -12,7 +12,7 @@ public interface IGenerator8NumberService<T> {
 
     public List<T> selectAll();
 
-    public T selectByPrimaryKey(Integer cId);
+    public T selectByPrimaryKey(String cId);
     
     public T selectByCode(String cNumber);
 

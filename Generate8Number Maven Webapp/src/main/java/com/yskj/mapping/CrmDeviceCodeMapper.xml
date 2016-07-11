@@ -2,92 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.yskj.dao.CrmDeviceCodeMapper" >
   <resultMap id="BaseResultMap" type="com.yskj.pojo.CrmDeviceCode" >
-    <id column="C_ID" property="cId" jdbcType="INTEGER" />
+    <id column="C_ID" property="cId" jdbcType="VARCHAR" />
     <result column="C_NUMBER" property="cNumber" jdbcType="VARCHAR" />
     <result column="C_CreateTime" property="cCreatetime" jdbcType="TIMESTAMP" />
     <result column="C_STATE" property="cState" jdbcType="INTEGER" />
   </resultMap>
-  <sql id="Example_Where_Clause" >
-    <where >
-      <foreach collection="oredCriteria" item="criteria" separator="or" >
-        <if test="criteria.valid" >
-          <trim prefix="(" suffix=")" prefixOverrides="and" >
-            <foreach collection="criteria.criteria" item="criterion" >
-              <choose >
-                <when test="criterion.noValue" >
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue" >
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue" >
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue" >
-                  and ${criterion.condition}
-                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Update_By_Example_Where_Clause" >
-    <where >
-      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
-        <if test="criteria.valid" >
-          <trim prefix="(" suffix=")" prefixOverrides="and" >
-            <foreach collection="criteria.criteria" item="criterion" >
-              <choose >
-                <when test="criterion.noValue" >
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue" >
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue" >
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue" >
-                  and ${criterion.condition}
-                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
   <sql id="Base_Column_List" >
     C_ID, C_NUMBER, C_CreateTime, C_STATE
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yskj.pojo.CrmDeviceCodeExample" >
-    select
-    <if test="distinct" >
-      distinct
-    </if>
-    'true' as QUERYID,
-    <include refid="Base_Column_List" />
-    from crm_device_code
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null" >
-      order by ${orderByClause}
-    </if>
-  </select>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />
     from crm_device_code
-    where C_ID = #{cId,jdbcType=INTEGER}
+    where C_ID = #{cId,jdbcType=VARCHAR}
   </select>
   <select id="selectByCode" resultMap="BaseResultMap">
     select 
@@ -95,20 +22,14 @@
     from crm_device_code
     where C_NUMBER = #{cNumber,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from crm_device_code
-    where C_ID = #{cId,jdbcType=INTEGER}
-  </delete>
-  <delete id="deleteByExample" parameterType="com.yskj.pojo.CrmDeviceCodeExample" >
-    delete from crm_device_code
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
+    where C_ID = #{cId,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.yskj.pojo.CrmDeviceCode" >
     insert into crm_device_code (C_ID, C_NUMBER, C_CreateTime, 
       C_STATE)
-    values (#{cId,jdbcType=INTEGER}, #{cNumber,jdbcType=VARCHAR}, #{cCreatetime,jdbcType=TIMESTAMP}, 
+    values (#{cId,jdbcType=VARCHAR}, #{cNumber,jdbcType=VARCHAR}, #{cCreatetime,jdbcType=TIMESTAMP}, 
       #{cState,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.yskj.pojo.CrmDeviceCode" >
@@ -129,7 +50,7 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="cId != null" >
-        #{cId,jdbcType=INTEGER},
+        #{cId,jdbcType=VARCHAR},
       </if>
       <if test="cNumber != null" >
         #{cNumber,jdbcType=VARCHAR},
@@ -142,42 +63,6 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.yskj.pojo.CrmDeviceCodeExample" resultType="java.lang.Integer" >
-    select count(*) from crm_device_code
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
-  </select>
-  <update id="updateByExampleSelective" parameterType="map" >
-    update crm_device_code
-    <set >
-      <if test="record.cId != null" >
-        C_ID = #{record.cId,jdbcType=INTEGER},
-      </if>
-      <if test="record.cNumber != null" >
-        C_NUMBER = #{record.cNumber,jdbcType=VARCHAR},
-      </if>
-      <if test="record.cCreatetime != null" >
-        C_CreateTime = #{record.cCreatetime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.cState != null" >
-        C_STATE = #{record.cState,jdbcType=INTEGER},
-      </if>
-    </set>
-    <if test="_parameter != null" >
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByExample" parameterType="map" >
-    update crm_device_code
-    set C_ID = #{record.cId,jdbcType=INTEGER},
-      C_NUMBER = #{record.cNumber,jdbcType=VARCHAR},
-      C_CreateTime = #{record.cCreatetime,jdbcType=TIMESTAMP},
-      C_STATE = #{record.cState,jdbcType=INTEGER}
-    <if test="_parameter != null" >
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.yskj.pojo.CrmDeviceCode" >
     update crm_device_code
     <set >
@@ -191,13 +76,13 @@
         C_STATE = #{cState,jdbcType=INTEGER},
       </if>
     </set>
-    where C_ID = #{cId,jdbcType=INTEGER}
+    where C_ID = #{cId,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.yskj.pojo.CrmDeviceCode" >
     update crm_device_code
     set C_NUMBER = #{cNumber,jdbcType=VARCHAR},
       C_CreateTime = #{cCreatetime,jdbcType=TIMESTAMP},
       C_STATE = #{cState,jdbcType=INTEGER}
-    where C_ID = #{cId,jdbcType=INTEGER}
+    where C_ID = #{cId,jdbcType=VARCHAR}
   </update>
 </mapper>

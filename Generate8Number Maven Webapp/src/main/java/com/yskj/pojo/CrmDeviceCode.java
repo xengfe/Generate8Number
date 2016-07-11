@@ -3,7 +3,7 @@ package com.yskj.pojo;
 import java.util.Date;
 
 public class CrmDeviceCode {
-    private Integer cId;
+    private String cId;
 
     private String cNumber;
 
@@ -11,12 +11,12 @@ public class CrmDeviceCode {
 
     private Integer cState;
 
-    public Integer getcId() {
+    public String getcId() {
         return cId;
     }
 
-    public void setcId(Integer cId) {
-        this.cId = cId;
+    public void setcId(String cId) {
+        this.cId = cId == null ? null : cId.trim();
     }
 
     public String getcNumber() {
