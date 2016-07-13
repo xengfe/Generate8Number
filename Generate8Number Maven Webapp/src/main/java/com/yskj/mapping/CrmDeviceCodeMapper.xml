@@ -22,6 +22,16 @@
     from crm_device_code
     where C_NUMBER = #{cNumber,jdbcType=VARCHAR}
   </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+  	select
+  	<include refid="Base_Column_List" />
+  	from crm_device_code 
+  </select>
+  <select id="queryTByPageSize" resultMap="BaseResultMap">
+  	select
+  	<include refid="Base_Column_List" />
+  	from crm_device_code limit #{startRow},#{pageSize}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from crm_device_code
     where C_ID = #{cId,jdbcType=VARCHAR}

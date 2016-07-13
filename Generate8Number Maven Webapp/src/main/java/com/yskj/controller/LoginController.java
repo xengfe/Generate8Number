@@ -19,7 +19,7 @@ public class LoginController {
 		if (username .equals("administrator") || password.equals("123456")) {
 			page = "redirect:/home";
 		}else {
-			
+			page = "error.jsp";
 		}
 		return page;
 	}

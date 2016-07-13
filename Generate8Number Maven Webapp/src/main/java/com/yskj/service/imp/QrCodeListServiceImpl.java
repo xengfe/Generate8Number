@@ -7,10 +7,9 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import com.yskj.dao.CrmDeviceCodeMapper;
-import com.yskj.service.IGenerator8NumberService;
-
-@Service("generator8NumberService")
-public class Generator8NumberServiceImp<T> implements IGenerator8NumberService<T>{
+import com.yskj.service.IQrCodeListService;
+@Service("qrcodeListService")
+public class QrCodeListServiceImpl<T> implements IQrCodeListService<T> {
 
 	@Resource
 	private CrmDeviceCodeMapper<T> CrmDeviceCodeDao;
@@ -31,23 +30,23 @@ public class Generator8NumberServiceImp<T> implements IGenerator8NumberService<T
 	}
 
 	@Override
-	public List<T> selectAll() {
-		return CrmDeviceCodeDao.selectAll();
-	}
-
-	@Override
 	public T selectByPrimaryKey(String cId) {
 		return CrmDeviceCodeDao.selectByPrimaryKey(cId);
 	}
 
 	@Override
 	public int updateByPrimaryKeySelective(T record) {
-		return CrmDeviceCodeDao.updateByPrimaryKey(record);
+		return CrmDeviceCodeDao.updateByPrimaryKeySelective(record);
 	}
 
 	@Override
 	public int updateByPrimaryKey(T record) {
-		return CrmDeviceCodeDao.updateByPrimaryKeySelective(record);
+		return CrmDeviceCodeDao.updateByPrimaryKey(record);
+	}
+
+	@Override
+	public List<T> selectAll() {
+		return CrmDeviceCodeDao.selectAll();
 	}
 
 	@Override
@@ -55,6 +54,9 @@ public class Generator8NumberServiceImp<T> implements IGenerator8NumberService<T
 		return CrmDeviceCodeDao.selectByCode(cNumber);
 	}
 
-	
+	@Override
+	public List<T> queryTByPageSize(int rows, int page) {
+		return CrmDeviceCodeDao.queryTByPageSize(rows, page);
+	}
 
 }

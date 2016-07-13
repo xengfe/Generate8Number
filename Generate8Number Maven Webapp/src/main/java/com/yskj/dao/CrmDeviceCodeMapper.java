@@ -2,6 +2,8 @@ package com.yskj.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 public interface CrmDeviceCodeMapper<T> {
     int deleteByPrimaryKey(String cId);
 
@@ -18,4 +20,6 @@ public interface CrmDeviceCodeMapper<T> {
 	List<T> selectAll();
 	
 	T selectByCode(String cNumber);
+	
+    List<T> queryTByPageSize(@Param(value = "startRow") int startRow,@Param(value = "pageSize") int pageSize);
 }
